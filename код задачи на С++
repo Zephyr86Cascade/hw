@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+vector<string> filterStringsByLength(const vector<string>& arr, int maxLength) {
+    vector<string> newArray;
+    for (const string& str : arr) {
+        if (str.length() <= maxLength) {
+            newArray.push_back(str);
+        }
+    }
+    return newArray;
+}
+
+int main() {
+    vector<string> initialArray = {"one", "two", "hi", "abcdef", "123456", "short"};
+    vector<string> newArray = filterStringsByLength(initialArray, 3);
+    for (const string& str : newArray) {
+        cout << str << " ";
+    }
+    cout << endl; // hi abc 123 short
+    return 0;
+}
